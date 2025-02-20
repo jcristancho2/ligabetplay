@@ -1,0 +1,104 @@
+{
+    "1": {
+        "name": "milan",
+        "players": {
+            "carlos": {
+                "nombre": "carlos",
+                "edad": 26,
+                "dorsal": 52,
+                "posicion": "portero"
+            }
+        },
+        "cuerpomd": {
+            "federico": {
+                "nombre": "federico",
+                "edad": 56,
+                "funcion": "medico"
+            },
+            "alejandro": {
+                "nombre": "alejandro",
+                "edad": 23,
+                "funcion": "enfermero"
+            }
+        },
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    },
+    "2": {
+        "name": "portugal",
+        "players": {},
+        "cuerpomd": {},
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    },
+    "3": {
+        "name": "santafe",
+        "players": {},
+        "cuerpomd": {},
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    },
+    "4": {
+        "name": "real madrid",
+        "players": {},
+        "cuerpomd": {},
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    },
+    "5": {
+        "name": "malaga",
+        "players": {},
+        "cuerpomd": {},
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    },
+    "6": {
+        "name": "bucaramanga",
+        "players": {},
+        "cuerpomd": {},
+        "cuerpotec": {},
+        "estadisticas": {
+            "pj": 0,
+            "pp": 0,
+            "pg": 0,
+            "pe": 0,
+            "gf": 0,
+            "gc": 0
+        }
+    }
+}
