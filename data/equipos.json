@@ -24,10 +24,10 @@
         "cuerpotec": {},
         "estadisticas": {
             "pj": 0,
-            "pp": 0,
-            "pg": 0,
-            "pe": 0,
-            "gf": 0,
+            "pp": 1,
+            "pg": 2,
+            "pe": 4,
+            "gf": 6,
             "gc": 0
         }
     },
