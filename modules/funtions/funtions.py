@@ -50,11 +50,11 @@ def m_admin_equi():
         case 1: #agregar equipo
             equipos(ligabetpay)
         case 2: #eliminar equipo
-            pass
+            delete_equi()
         case 3: #editar equipo
             pass
         case 4: #mostrar equipo
-            pass
+            mostrar_equi()
         case 5: # regresar
             return m_principal()
         case _:
@@ -96,7 +96,16 @@ def players():
 
     ligabetpay = j.read_json(FILE)
     
-    mostrar_equi()
+    print("\n🏆 Lista de Equipos Disponibles:")
+    for team_id, team_data in ligabetpay.items():
+        print(f"ID: {team_id} EQUIPO: {team_data['name'].title()}")
+
+    equipo_id = vd.validateInt("\n Ingresa el ID del equipo para agregar un jugador: ")
+    equipo_id = str(equipo_id)
+    
+    if equipo_id not in ligabetpay:
+        print("equipo no registrado")
+        return
 
     p_name = vd.validateAlpha('Ingresa el nombre del jugador: ')
     edad = int(vd.validateInt(f' Ingresa la edad de {p_name}: '))
@@ -136,7 +145,16 @@ def players():
 def equi_med():
 
     ligabetpay = j.read_json(FILE)
-    mostrar_equi()
+    print("\n🏆 Lista de Equipos Disponibles:")
+    for team_id, team_data in ligabetpay.items():
+        print(f"ID: {team_id} EQUIPO: {team_data['name'].title()}")
+
+    equipo_id = vd.validateInt("\n Ingresa el ID del equipo para agregar un jugador: ")
+    equipo_id = str(equipo_id)
+    
+    if equipo_id not in ligabetpay:
+        print("equipo no registrado")
+        return
     
     p_name_med = vd.validateAlpha('Ingresa el nombre del staff medico: ')
     edad = int(vd.validateInt(f' Ingresa la edad de {p_name_med}: '))
@@ -174,7 +192,16 @@ def equi_med():
 def equi_tec():
 
     ligabetpay = j.read_json(FILE)
-    mostrar_equi()
+    print("\n🏆 Lista de Equipos Disponibles:")
+    for team_id, team_data in ligabetpay.items():
+        print(f"ID: {team_id} EQUIPO: {team_data['name'].title()}")
+
+    equipo_id = vd.validateInt("\n Ingresa el ID del equipo para agregar un jugador: ")
+    equipo_id = str(equipo_id)
+    
+    if equipo_id not in ligabetpay:
+        print("equipo no registrado")
+        return
     p_name_tec = vd.validateAlpha('Ingresa el nombre del staff medico: ')
     edad = int(vd.validateInt(f' Ingresa la edad de {p_name_tec}: '))
     print("""
@@ -226,4 +253,25 @@ def edit_equi():
     pass
 
 def delete_equi():
-    pass
+    ligabetpay = j.read_json(FILE)
+    print("\n🏆 Lista de Equipos Disponibles:")
+    for team_id, team_data in ligabetpay.items():
+        print(f"ID: {team_id} EQUIPO: {team_data['name'].title()}")
+
+    equipo_id = vd.validateInt("\n Ingresa el ID del equipo que desea eliminar : ")
+    equipo_id = str(equipo_id)
+    
+    if equipo_id not in ligabetpay:
+        print("⚠️ Equipo no registrado.")
+    else:
+        # Confirmación antes de eliminar
+        confirmacion = input(f"¿Estás seguro de eliminar el equipo '{ligabetpay[equipo_id]['name'].title()}'? (S/N): ").strip().lower()
+    
+    if confirmacion == "s":
+        del ligabetpay[equipo_id]  # Eliminar equipo
+        print("✅ Equipo eliminado correctamente.")
+        
+        j.write_json(FILE, ligabetpay)
+    else:
+        print("⚠️ Operación cancelada.")
+    
