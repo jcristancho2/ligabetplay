@@ -21,7 +21,8 @@
                 "funcion": "enfermero"
             }
         },
-        "cuerpotec": {},
+        "cuerpotec": 
+        {},
         "estadisticas": {
             "pj": 0,
             "pp": 1,

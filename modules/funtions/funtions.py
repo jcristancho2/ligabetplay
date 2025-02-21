@@ -311,21 +311,20 @@ def actualizar_estadisticas():
 
 def mostrar_estad():
     ligabetpay = j.read_json(FILE)
-    print("\n🏆 Lista de Equipos Disponibles:")
+    print("Lista de Equipos Disponibles:")
     for team_id, team_data in ligabetpay.items():
         print(f"ID: {team_id} - {team_data['name'].title()}")
 
-    # Solicitar ID del equipo
-    equipo_id = input("\n🔹 Ingresa el ID del equipo que deseas consultar: ").strip()
 
-    # Verificar si el ID es válido
+    equipo_id = input("Ingresa el ID del equipo que deseas consultar: ").strip()
+
+
     if equipo_id not in ligabetpay:
-        print("⚠️ Equipo no registrado.")
+        print("Equipo no registrado.")
         return
 
-    equipo = ligabetpay[equipo_id]  # Obtener datos del equipo
+    equipo = ligabetpay[equipo_id] 
 
-    # Mostrar estadísticas actuales
-    print(f"\n📊 Estadísticas de {equipo['name'].title()}:")
+    print(f"Estadísticas de {equipo['name'].title()}:")
     for stat, value in equipo["estadisticas"].items():
         print(f"🔹 {stat.upper()}: {value}")
