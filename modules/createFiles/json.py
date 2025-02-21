@@ -1,10 +1,14 @@
-import os
 import json
+import os
 from typing import Dict, List, Optional
 
-
 def read_json(archivo: str) -> Dict:
-    """Lee y retorna el contenido del archivo JSON"""
+    """
+    Lee un archivo JSON y retorna su contenido como un diccionario.
+
+    :param archivo: Ruta del archivo JSON a leer.
+    :return: Diccionario con los datos del JSON o un diccionario vacío si el archivo no existe.
+    """
     try:
         with open(archivo, "r", encoding='utf-8') as file:
             return json.load(file)
@@ -12,14 +16,25 @@ def read_json(archivo: str) -> Dict:
         return {}
 
 def write_json(file_path: str, data: Dict) -> None:
-    """Escribe datos en el archivo JSON"""
+    """
+    Escribe datos en un archivo JSON.
+
+    :param file_path: Ruta del archivo JSON donde se guardarán los datos.
+    :param data: Diccionario con los datos a escribir.
+    """
     with open(file_path, "w", encoding='utf-8') as file:
         json.dump(data, file, indent=4)
 
 def update_json(file_path: str, data: Dict, path: Optional[List[str]] = None) -> None:
     """
-    Actualiza datos en el JSON, opcionalmente en una ruta específica
-    Ejemplo: update_json('db.json', {'nuevo': 'dato'}, ['ruta', 'subruta'])
+    Actualiza un archivo JSON con nuevos datos en una ruta específica.
+
+    :param file_path: Ruta del archivo JSON a modificar.
+    :param data: Diccionario con los nuevos datos a agregar o actualizar.
+    :param path: Lista con la ruta dentro del JSON donde se actualizarán los datos (opcional).
+    
+    Ejemplo:
+        update_json('db.json', {'nuevo': 'dato'}, ['ruta', 'subruta'])
     """
     current_data = read_json(file_path)
     
@@ -36,8 +51,14 @@ def update_json(file_path: str, data: Dict, path: Optional[List[str]] = None) ->
 
 def delete_json(file_path: str, path: List[str]) -> bool:
     """
-    Elimina datos en la ruta especificada
-    Retorna True si se eliminó exitosamente
+    Elimina una clave específica dentro de un archivo JSON.
+
+    :param file_path: Ruta del archivo JSON a modificar.
+    :param path: Lista con la ruta de claves donde se encuentra el dato a eliminar.
+    :return: True si la eliminación fue exitosa, False si la clave no existe.
+
+    Ejemplo:
+        delete_json('db.json', ['ruta', 'subruta'])
     """
     data = read_json(file_path)
     current = data
@@ -55,7 +76,12 @@ def delete_json(file_path: str, path: List[str]) -> bool:
 
 def initialize_json(file_path: str, initial_structure: Dict) -> None:
     """
-    Inicializa el archivo con una estructura base si no existe
+    Inicializa un archivo JSON con una estructura base si no existe.
+
+    :param file_path: Ruta del archivo JSON.
+    :param initial_structure: Diccionario con la estructura inicial del JSON.
+
+    Si el archivo ya existe, se asegura de que contenga al menos las claves definidas en initial_structure.
     """
     if not os.path.isfile(file_path):
         write_json(file_path, initial_structure)
@@ -65,3 +91,4 @@ def initialize_json(file_path: str, initial_structure: Dict) -> None:
             if key not in current_data:
                 current_data[key] = value
         write_json(file_path, current_data)
+

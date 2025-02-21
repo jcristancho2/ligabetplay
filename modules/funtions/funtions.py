@@ -1,4 +1,3 @@
-
 import modules.utils.validateData as vd , modules.utils.controlScreen as cc, modules.utils.emotic as e
 import ui.menus as m
 import modules.createFiles.json as j 
@@ -62,7 +61,8 @@ def m_admin_equi():
             
 #/////////////////////////////////////////////////////////////////
 
-def equipos(ligabetpay:dict):
+
+def equipos(ligabetpay:dict):# # Función para agregar equipos
     team={
             "name":"",
             "players":{},
@@ -92,7 +92,7 @@ def equipos(ligabetpay:dict):
         elif option =='n':
             return m_admin_equi()
 
-def players():
+def players(): # Función para agregar jugadores
 
     ligabetpay = j.read_json(FILE)
     
@@ -142,7 +142,7 @@ def players():
     elif option == "n":
         return m_admin_equi()
     
-def equi_med():
+def equi_med(): #funcion para agregar medicos
 
     ligabetpay = j.read_json(FILE)
     print("\n🏆 Lista de Equipos Disponibles:")
@@ -189,7 +189,7 @@ def equi_med():
     elif option == "n":
         return m_admin_equi()
     
-def equi_tec():
+def equi_tec(): #funcion para agregar tecnicos
 
     ligabetpay = j.read_json(FILE)
     print("\n🏆 Lista de Equipos Disponibles:")
@@ -236,7 +236,7 @@ def equi_tec():
     
 #/////////////////////////////////////////////////////////////////
 
-def mostrar_equi():
+def mostrar_equi(): #funcion para visualizacion
     ligabetpay = j.read_json(FILE)
     print("\n🏆 Lista de Equipos Disponibles:")
     for team_id, team_data in ligabetpay.items():
@@ -249,10 +249,10 @@ def mostrar_equi():
         print("equipo no registrado")
         return
 
-def edit_equi():
+def edit_equi(): #funcion para editar equipos
     pass
 
-def delete_equi():
+def delete_equi(): #funcion para eliminar equipos
     ligabetpay = j.read_json(FILE)
     print("\n🏆 Lista de Equipos Disponibles:")
     for team_id, team_data in ligabetpay.items():
@@ -277,7 +277,7 @@ def delete_equi():
 
 #/////////////////////////////////////////////////////////////////
     
-def actualizar_estadisticas():
+def actualizar_estadisticas(): #funcion para actualizar estadisticas
     ligabetpay = j.read_json(FILE)
     print("\n🏆 Lista de Equipos Disponibles:")
     for team_id, team_data in ligabetpay.items():
@@ -309,7 +309,7 @@ def actualizar_estadisticas():
     print("\n✅ Estadísticas actualizadas correctamente.")
 
 
-def mostrar_estad():
+def mostrar_estad(): #funcion para mostrar estadisticas
     ligabetpay = j.read_json(FILE)
     print("Lista de Equipos Disponibles:")
     for team_id, team_data in ligabetpay.items():
