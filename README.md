@@ -12,8 +12,7 @@ Este proyecto es una aplicación desarrollada en Python para gestionar informaci
 
 ## Requisitos del Sistema
 
-- Python 3.x
-- Bibliotecas adicionales especificadas en `requirements.txt`
+- Python 3.x`
 
 ## Instalación
 
